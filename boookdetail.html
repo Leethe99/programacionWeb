@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del libro</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Nombre libreria</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="bookindex.html">Libros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="storeindex.html">Tiendas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="bookreservationlist.html">Reportes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cerrar Sesion</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h2>Detalle libro</h2>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Titulo del Libro</h5>
+        <p class="card-text"><strong>Autor:</strong> Nombre del Autor</p>
+        <p class="card-text"><strong>Año de Publicacion:</strong> 2022</p>
+        <p class="card-text"><strong>Descripción:</strong> Descripcion del libro...</p>
+        <h6>Disponibilidad en Tiendas:</h6>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Tienda 1
+            <span class="badge badge-primary badge-pill">10</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Tienda 2
+            <span class="badge badge-primary badge-pill">5</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Tienda 3
+            <span class="badge badge-primary badge-pill">15</span>
+          </li>
+        </ul>
+        <a href="bookform.html" class="btn btn-primary mt-3">Editar</a>
+        <a href="bookassign.html" class="btn btn-success mt-3">Asignar a una Tienda</a>
+        <a href="bookreservation.html" class="btn btn-success mt-3">Apartar libro</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiendas</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Nombre libreria</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="bookindex.html">Libros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="storeindex.html">Tiendas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="bookreservationlist.html">Reportes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cerrar Sesion</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h2>Listado de tiendas</h2>
+        <div class="text-right mb-3">
+          <a href="#" class="btn btn-primary">Añadir Tienda</a>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Direccion</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tienda 1</td>
+              <td>Direccion 1</td>
+              <td>
+                <a href="storeform.html" class="btn btn-info">Editar</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Tienda 2</td>
+              <td>Direccion 2</td>
+              <td>
+                <a href="storeform.html" class="btn btn-info">Editar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
