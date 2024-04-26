@@ -1,68 +1,68 @@
 CREATE TABLE [users] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
   [role_id] int,
-  [name] nvarchar(255),
-  [phone] nvarchar(255),
-  [email] nvarchar(255),
-  [password] nvarchar(255)
+  [name] nvarchar(100),
+  [phone] nvarchar(20),
+  [email] nvarchar(100),
+  [password] nvarchar(100)
 )
 GO
 
 CREATE TABLE [roles] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [name] nvarchar(255)
+  [name] nvarchar(50)
 )
 GO
 
 CREATE TABLE [books] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [title] nvarchar(255),
+  [title] nvarchar(200),
   [author_id] int,
   [pub_year] int,
-  [description] nvarchar(255),
+  [description] nvarchar(500),
   [genre_id] int
 )
 GO
 
 CREATE TABLE [genres] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [genre] nvarchar(255)
+  [genre] nvarchar(50)
 )
 GO
 
 CREATE TABLE [authors] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [name] nvarchar(255),
-  [last_name] nvarchar(255)
+  [name] nvarchar(100),
+  [last_name] nvarchar(100)
 )
 GO
 
 CREATE TABLE [stores] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [name] nvarchar(255),
-  [street] nvarchar(255),
+  [name] nvarchar(100),
+  [street] nvarchar(100),
   [city] int,
   [state_id] int,
   [country] int,
-  [zipcode] int
+  [zipcode] nvarchar(20)
 )
 GO
 
 CREATE TABLE [cities] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [city] nvarchar(255)
+  [city] nvarchar(100)
 )
 GO
 
 CREATE TABLE [states] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [state] nvarchar(255)
+  [state] nvarchar(100)
 )
 GO
 
 CREATE TABLE [countries] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [country] nvarchar(255)
+  [country] nvarchar(100)
 )
 GO
 
@@ -87,7 +87,7 @@ GO
 
 CREATE TABLE [reservation_status] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [name] nvarchar(255)
+  [name] nvarchar(50)
 )
 GO
 
