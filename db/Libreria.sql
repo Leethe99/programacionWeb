@@ -19,8 +19,7 @@ CREATE TABLE [books] (
   [title] nvarchar(200),
   [author_id] int,
   [pub_year] int,
-  [description] nvarchar(500),
-  [genre_id] int
+  [description] nvarchar(500)
 )
 GO
 
@@ -91,13 +90,19 @@ CREATE TABLE [reservation_status] (
 )
 GO
 
+CREATE TABLE [book_genres] (
+  [book_id] int,
+  [genre_id] int,
+  PRIMARY KEY ([book_id], [genre_id]),
+  FOREIGN KEY ([book_id]) REFERENCES [books] ([id]),
+  FOREIGN KEY ([genre_id]) REFERENCES [genres] ([id])
+)
+GO
+
 ALTER TABLE [users] ADD FOREIGN KEY ([role_id]) REFERENCES [roles] ([id])
 GO
 
 ALTER TABLE [books] ADD FOREIGN KEY ([author_id]) REFERENCES [authors] ([id])
-GO
-
-ALTER TABLE [books] ADD FOREIGN KEY ([genre_id]) REFERENCES [genres] ([id])
 GO
 
 ALTER TABLE [stores] ADD FOREIGN KEY ([city]) REFERENCES [cities] ([id])
