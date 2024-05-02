@@ -1,22 +1,22 @@
 CREATE TABLE [users] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [role_id] int,
-  [name] nvarchar(100),
+  [role_id] int NOT NULL,
+  [name] nvarchar(100) NOT NULL,
   [phone] nvarchar(20),
-  [email] nvarchar(100),
-  [password] nvarchar(100)
+  [email] nvarchar(320) NOT NULL,
+  [password] nvarchar(100) NOT NULL
 )
 GO
 
 CREATE TABLE [roles] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [name] nvarchar(50)
+  [name] nvarchar(50) NOT NULL
 )
 GO
 
 CREATE TABLE [books] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [title] nvarchar(200),
+  [title] nvarchar(200) NOT NULL,
   [author_id] int,
   [pub_year] int,
   [description] nvarchar(500)
@@ -25,68 +25,68 @@ GO
 
 CREATE TABLE [genres] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [genre] nvarchar(50)
+  [genre] nvarchar(50) NOT NULL
 )
 GO
 
 CREATE TABLE [authors] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [name] nvarchar(100),
+  [name] nvarchar(100) NOT NULL,
   [last_name] nvarchar(100)
 )
 GO
 
 CREATE TABLE [stores] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [name] nvarchar(100),
+  [name] nvarchar(100) NOT NULL,
   [street] nvarchar(100),
   [city] int,
-  [state_id] int,
-  [country] int,
-  [zipcode] nvarchar(20)
+  [state_id] int NOT NULL,
+  [country] int NOT NULL,
+  [zipcode] nvarchar(20) NOT NULL
 )
 GO
 
 CREATE TABLE [cities] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [city] nvarchar(100)
+  [city] nvarchar(100) NOT NULL
 )
 GO
 
 CREATE TABLE [states] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [state] nvarchar(100)
+  [state] nvarchar(100) NOT NULL
 )
 GO
 
 CREATE TABLE [countries] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [country] nvarchar(100)
+  [country] nvarchar(100) NOT NULL
 )
 GO
 
 CREATE TABLE [inventory] (
-  [store_id] int,
-  [book_id] int,
-  [quantity] int,
+  [store_id] int NOT NULL,
+  [book_id] int NOT NULL,
+  [quantity] int NOT NULL,
   PRIMARY KEY ([store_id], [book_id])
 )
 GO
 
 CREATE TABLE [reservation] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [user_id] int,
-  [store_id] int,
-  [book_id] int,
-  [quantity] int,
-  [status_id] int,
-  [created_at] datetime
+  [user_id] int NOT NULL,
+  [store_id] int NOT NULL,
+  [book_id] int NOT NULL,
+  [quantity] int NOT NULL,
+  [status_id] int NOT NULL,
+  [created_at] datetime NOT NULL
 )
 GO
 
 CREATE TABLE [reservation_status] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [name] nvarchar(50)
+  [name] nvarchar(50) NOT NULL
 )
 GO
 
@@ -130,4 +130,3 @@ ALTER TABLE [reservation] ADD FOREIGN KEY ([book_id]) REFERENCES [books] ([id])
 GO
 
 ALTER TABLE [reservation] ADD FOREIGN KEY ([status_id]) REFERENCES [reservation_status] ([id])
-GO
